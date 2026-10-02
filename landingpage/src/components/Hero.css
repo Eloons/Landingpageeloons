@@ -1,0 +1,122 @@
+/* =====================================================================
+   3. HERO
+   ===================================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px var(--margem) 90px;
+  overflow: hidden;
+}
+
+/* canvas das bolinhas, atrás do texto */
+#bolas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.85;
+}
+
+.hero-conteudo {
+  max-width: var(--largura);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* "ELO" pequeno acima da frase grande */
+.hero .sigla {
+  margin: 0 0 20px;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1;
+  color: var(--marca-clara);
+}
+
+.hero .signi {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(48px, 9.5vw, 132px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.destaque {
+  font-style: italic;
+  color: var(--marca-clara);
+}
+
+.ponto {
+  color: var(--texto);
+}
+
+.hero .p2 {
+  max-width: 560px;
+  margin: 32px 0 0;
+  font-size: clamp(16px, 1.6vw, 19px);
+  color: var(--texto-suave);
+}
+
+.hero .p2 strong {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.hero-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.hero-rodape {
+  position: absolute;
+  left: var(--margem);
+  right: var(--margem);
+  bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+@media (max-width: 1024px) {
+  .hero .signi {
+    font-size: clamp(56px, 10.5vw, 110px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 160px var(--margem) 100px;
+  }
+
+  .hero .p2 {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-top: 140px;
+  }
+
+  .hero-rodape {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero .signi {
+    font-size: clamp(40px, 11vw, 56px);
+  }
+}

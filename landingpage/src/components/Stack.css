@@ -1,0 +1,39 @@
+/* =====================================================================
+   9. STACK
+   ===================================================================== */
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 56px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  font-size: 15px;
+  color: var(--texto);
+  background: var(--fundo-2);
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.chip svg {
+  width: 20px;
+  height: 20px;
+}
+
+.chip:hover {
+  transform: translateY(-3px);
+  border-color: rgba(242, 239, 233, 0.45);
+}
+
+@media (max-width: 900px) {
+  .stack {
+    margin-top: 48px;
+  }
+}

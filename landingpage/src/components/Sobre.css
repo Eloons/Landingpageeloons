@@ -1,0 +1,40 @@
+/* =====================================================================
+   5. SOBRE / MANIFESTO
+   ===================================================================== */
+
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 5vw, 72px);
+  margin-top: 56px;
+}
+
+.p3 {
+  margin: 0;
+  max-width: 520px;
+  color: var(--texto-suave);
+}
+
+.p3 strong {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .duas-colunas {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .duas-colunas {
+    margin-top: 44px;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .duas-colunas {
+    grid-template-columns: 1fr;
+  }
+}

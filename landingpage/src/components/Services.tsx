@@ -1,0 +1,70 @@
+import "./Services.css";
+
+const WHATSAPP = "https://wa.me/5562998197704";
+
+const servicos = [
+  {
+    num: "01",
+    titulo: "Sites",
+    texto:
+      "Criamos sites modernos e personalizados, pensados para fortalecer a presença digital da sua empresa com praticidade, desempenho e bons resultados.",
+    tags: ["React", "Vite"],
+  },
+  {
+    num: "02",
+    titulo: "Sistemas",
+    texto:
+      "Desenvolvemos sistemas sob medida e ajudamos sua empresa a encontrar as melhores soluções tecnológicas para otimizar processos, organização e produtividade.",
+    tags: ["Python", "SQL", "Painel próprio"],
+  },
+  {
+    num: "03",
+    titulo: "Suporte técnico",
+    texto:
+      "Oferecemos suporte para resolver problemas e garantir que seus sistemas e ferramentas funcionem de forma adequada.",
+    tags: ["Google", "Automações", "Manutenção"],
+  },
+];
+
+export default function Services() {
+  return (
+    <section className="services" id="servicos">
+      <div className="contem">
+        <h2 className="sobre-titulo">
+          Tecnologia inteligente. Soluções feitas{" "}
+          <span className="destaque">para você.</span>
+        </h2>
+        <p className="sub">
+          Cada projeto é único, criado do zero para atender às suas
+          necessidades. Cuidamos de cada etapa, da primeira ideia até a entrega
+          final, com tecnologia, qualidade e atenção a cada detalhe.
+        </p>
+        <div className="servicos_aba">
+          {servicos.map((s) => (
+            <a
+              key={s.num}
+              className="servico"
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <hr className="linha1" />
+              <span className="num">{s.num}</span>
+              <div className="servico-corpo">
+                <h3>{s.titulo}</h3>
+                <p>{s.texto}</p>
+                <div className="service-tags">
+                  {s.tags.map((t) => (
+                    <span key={t} className="tags">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
