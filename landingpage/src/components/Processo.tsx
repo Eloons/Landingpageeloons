@@ -1,4 +1,8 @@
 import "./Processo.css";
+import { gsap } from "gsap";
+import { useLayoutEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const etapas = [
   {
@@ -34,9 +38,33 @@ const etapas = [
 ];
 
 export default function Processo() {
+    const  listaRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".etapas li",
+        { opacity: 0,x:-80 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.4,
+          stagger: 0.3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: listaRef.current,
+            start: "top 70%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, listaRef);
+
+    return () => ctx.revert();
+  }, []);
+  
   return (
     <section className="processo" id="processo">
-      <div className="contem">
+      <div className="contem" ref={listaRef}>
         <h2 className="sobre-titulo">
           Do planejamento <span className="destaque">até</span> o resultado
         </h2>
@@ -45,7 +73,7 @@ export default function Processo() {
           <strong>para você</strong>
         </p>
 
-        <ol className="etapas">
+        <ol className="etapas" >
           {etapas.map((e, i) => (
             <li key={e.titulo}>
               <span className="num">{String(i + 1).padStart(2, "0")}</span>

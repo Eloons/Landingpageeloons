@@ -60,6 +60,7 @@ export default function Contact() {
               id="message"
               placeholder="Digite sua mensagem"
               required
+              style={{ resize: 'none' }}
             ></textarea>
 
             <input type="hidden" name="_captcha" value="false" />

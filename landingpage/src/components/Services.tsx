@@ -1,4 +1,8 @@
 import "./Services.css";
+import { gsap } from "gsap";
+import { useLayoutEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const WHATSAPP = "https://wa.me/5562998197704";
 
@@ -27,6 +31,32 @@ const servicos = [
 ];
 
 export default function Services() {
+  const  listaRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".servico",
+        { opacity: 0,x:-80 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.4,
+          stagger: 0.3,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: listaRef.current,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    }, listaRef);
+
+    return () => ctx.revert();
+  }, []);
+  
+  
+  
   return (
     <section className="services" id="servicos">
       <div className="contem">
@@ -39,7 +69,7 @@ export default function Services() {
           necessidades. Cuidamos de cada etapa, da primeira ideia até a entrega
           final, com tecnologia, qualidade e atenção a cada detalhe.
         </p>
-        <div className="servicos_aba">
+        <div className="servicos_aba" ref={listaRef}>
           {servicos.map((s) => (
             <a
               key={s.num}
@@ -47,6 +77,7 @@ export default function Services() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
+              
             >
               <hr className="linha1" />
               <span className="num">{s.num}</span>

@@ -9,7 +9,7 @@ import Stack from "./components/Stack";
 import Equipe from "./components/Equipe";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
+import Animation from "./components/Animation";
 
 
 export default function App() {
@@ -21,6 +21,7 @@ export default function App() {
         <Hero />
         <Sobre />
         <Services />
+        <Animation />
         <Projetos />
         <Processo />
         <Stack />
