@@ -1,13 +1,13 @@
 import "./Equipe.css";
 
 const membros = [
-  { foto: "calebe.jpeg", nome: "Calebe", alt: "Calebe Menezes de Oliveira", cargo: "Analista de Documentação e Compliance", area: "BackEnd" },
-  { foto: "carolina.png", nome: "Carolina", alt: "Carolina Pedrosa Linsmeyer", cargo: "Gerente de Projetos / Scrum Master", area: "FrontEnd" },
-  { foto: "pedro.png", nome: "Pedro", alt: "Pedro Fernandes de Jesus", cargo: "Líder Técnico / Especialista de Execução", area: "FullStack" },
-  { foto: "kaue.jpeg", nome: "Kauê", alt: "Kauê Yuki Kozima", cargo: "Analista de Qualidade (QA) e Normas", area: "BackEnd" },
-  { foto: "sophiasemfundo.png", nome: "Sophia", alt: "Sophia Galvão Vieira", cargo: "Desenvolvedora / Designer", area: "FrontEnd" },
-  { foto: "evelyn.png", nome: "Evelyn", alt: "Evelyn Leandro Falcioni", cargo: "Desenvolvedora / Designer", area: "FrontEnd" },
-  { foto: "vitin.jpeg", nome: "Vítor", alt: "Vítor Ferreira Ramos", cargo: "Desenvolvedor / Designer", area: "FrontEnd" },
+  { foto: "calebe.jpeg", nome: "Calebe Menezes de Oliveira", alt: "Calebe Menezes de Oliveira", cargo: "Analista de Documentação e Compliance", area: "BackEnd" },
+  { foto: "carolina.png", nome: "Carolina Pedrosa Linsmeyer", alt: "Carolina Pedrosa Linsmeyer", cargo: "Gerente de Projetos / Scrum Master", area: "FrontEnd" },
+  { foto: "pedro.png", nome: "Pedro Fernandes de Jesus", alt: "Pedro Fernandes de Jesus", cargo: "Líder Técnico / Especialista de Execução", area: "FullStack" },
+  { foto: "kaue.jpeg", nome: "Kauê Yuki Kozima", alt: "Kauê Yuki Kozima", cargo: "Analista de Qualidade (QA) e Normas", area: "BackEnd" },
+  { foto: "sophiasemfundo.png", nome: "Sophia Galvão Vieira", alt: "Sophia Galvão Vieira", cargo: "Desenvolvedora / Designer", area: "FrontEnd" },
+  { foto: "evelyn.png", nome: "Evelyn Leandro Falcioni", alt: "Evelyn Leandro Falcioni", cargo: "Desenvolvedora / Designer", area: "FrontEnd" },
+  { foto: "vitin.jpeg", nome: "Vítor Ferreira Ramos", alt: "Vítor Ferreira Ramos", cargo: "Desenvolvedor / Designer", area: "FrontEnd" },
 ];
 
 export default function Equipe() {

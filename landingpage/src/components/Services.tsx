@@ -45,7 +45,7 @@ export default function Services() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: listaRef.current,
-            start: "top 80%",
+            start: "top 60%",
             toggleActions: "play none none reverse",
           },
         }
