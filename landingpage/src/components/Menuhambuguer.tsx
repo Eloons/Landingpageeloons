@@ -30,7 +30,7 @@ export default function Menuhambuguer() {
                 <li><a href="#Projetos" onClick={fechar}>Projetos</a></li>
                 <li><a href="#processo" onClick={fechar}>Processo</a></li>
                 <li><a href="#stack" onClick={fechar}>Stack</a></li>
-                <li><a href="#equipe" onClick={fechar}>Equipe</a></li>
+                <li><a href="#contato" onClick={fechar}>Contato</a></li>
             </ul>
         </menu>
     </div>
