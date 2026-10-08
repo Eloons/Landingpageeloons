@@ -6,14 +6,14 @@ const links = [
   { href: "#Projetos", label: "Projetos" },
   { href: "#processo", label: "Processo" },
   { href: "#stack", label: "Stack" },
-  { href: "#equipe", label: "Equipe" },
+  { href: "#contato", label: "Contato" },
 ];
 
 export default function Navbar() {
   return (
     <section className="navbar" id="home">
       <a href="#home">
-        <img src="/eloo_e_l_branco.png" alt="Logo da ELO" />
+        <img src="/eloons-simbolo.png" alt="Logo da ELO" />
       </a>
       <ul>
         {links.map((l) => (

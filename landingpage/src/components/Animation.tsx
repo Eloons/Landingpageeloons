@@ -116,7 +116,6 @@ export default function Animation() {
 
         <div className="take take3" ref={take3Ref}>
           <h2>A ELOONS ENCONTRA SOLUÇÃO</h2>
-          <p>Texto provisório explicando a solução.</p>
         </div>
       </div>
     </div>

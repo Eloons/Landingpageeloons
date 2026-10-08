@@ -6,7 +6,6 @@ import Services from "./components/Services";
 import Projetos from "./components/Projetos";
 import Processo from "./components/Processo";
 import Stack from "./components/Stack";
-import Equipe from "./components/Equipe";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Animation from "./components/Animation";
@@ -60,7 +59,6 @@ export default function App() {
         <Projetos />
         <Processo />
         <Stack />
-        <Equipe />
       <Animation />
         <Contact />
       </main>

@@ -16,7 +16,7 @@
 .form-card {
   width: 100%;
   background: #fff;
-  color: #111;
+  color: var(--preto-mono);
   border-radius: 14px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -28,8 +28,8 @@
   font-family: var(--sans);
   font-size: 18px;
   font-weight: 700;
-  color: #111;
-  border-bottom: 1px solid #e3e3e3;
+  color: var(--noite);
+  border-bottom: 1px solid #e3e8f2;
 }
 
 .form-corpo {
@@ -54,10 +54,10 @@
 .form-card textarea {
   width: 100%;
   padding: 11px 12px;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #c4cad8;
   border-radius: 8px;
   background: #fff;
-  color: #111;
+  color: var(--preto-mono);
   font-size: 14px;
   font-family: inherit;
   outline: none;
@@ -67,13 +67,13 @@
 
 .form-card input::placeholder,
 .form-card textarea::placeholder {
-  color: #8a8a8a;
+  color: var(--aco);
 }
 
 .form-card input:focus,
 .form-card textarea:focus {
   border-color: var(--marca);
-  box-shadow: 0 0 0 3px rgba(68, 68, 173, 0.2);
+  box-shadow: 0 0 0 3px rgba(18, 56, 255, 0.2);
 }
 
 .form-card textarea {
@@ -96,7 +96,7 @@
 }
 
 .form-card button:hover {
-  background: #5555c8;
+  background: #3558ff;
   transform: translateY(-2px);
 }
 

@@ -6,13 +6,24 @@
    ===================================================================== */
 
 :root {
-  --fundo: #08070a;
-  --fundo-2: #100f14;
-  --texto: #f2efe9;
-  --texto-suave: rgba(242, 239, 233, 0.62);
-  --linha: rgba(242, 239, 233, 0.14);
-  --marca: #4444ad;
-  --marca-clara: #8f8fff;
+  /* paleta da marca */
+  --eletrico: #1238ff;
+  --noite: black;
+  --ciano: #14a0ff;
+  --branco: #ffffff;
+  --nevoa: #f3f6fb;
+  --aco: #5b6478;
+  --noite-profundo: #080d24;
+  --preto-mono: #111111;
+
+  /* uso no site (tema escuro) */
+  --fundo: var(--noite-profundo);
+  --fundo-2: var(--noite);
+  --texto: var(--branco);
+  --texto-suave: rgba(255, 255, 255, 0.64);
+  --linha: rgba(255, 255, 255, 0.14);
+  --marca: var(--eletrico);
+  --marca-clara: var(--ciano);
 
   --serif: 'Lora', Georgia, 'Times New Roman', serif;
   --sans: 'Sora', system-ui, sans-serif;
@@ -45,6 +56,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+#root {
+  background-color: var(--noite);
+  min-height: 100vh;
+}
+
 img {
   max-width: 100%;
 }
@@ -52,8 +68,6 @@ img {
 a {
   color: inherit;
 }
-
-
 
 :focus-visible {
   outline: 2px solid var(--marca-clara);
@@ -99,6 +113,7 @@ a {
 .contact {
   padding: clamp(80px, 12vw, 150px) 0;
   border-top: 1px solid var(--linha);
+  background-color: var(--noite);
 }
 
 .rotulo {
@@ -149,7 +164,7 @@ a {
 
 .wth-btn:hover {
   transform: translateY(-3px);
-  background: #5555c8;
+  background: #3558ff;
 }
 
 /* botão secundário (só contorno) */
@@ -180,7 +195,6 @@ a {
 
 @media (max-width: 900px) {
   /* navbar ficou mais alta: mais espaço pros links âncora */
-
 
   #wwa,
   .services,

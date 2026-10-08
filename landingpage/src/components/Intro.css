@@ -1,62 +1,48 @@
 /* =====================================================================
    13. INTRO (tela de abertura)
-   Camada em tela cheia: o "el" entra pela esquerda, os anéis pela
-   direita, e a camada some sozinha depois de 2,4s.
+   Camada em tela cheia: a logo sobe de baixo, no centro, aparecendo
+   aos poucos. Depois a camada some sozinha.
    ===================================================================== */
 
 .intro {
   position: fixed;
   inset: 0;
-  z-index: 3000;               
+  z-index: 3000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
   background: var(--fundo);
-  animation: intro-sai 0.8s ease 3.2s forwards;  
+  animation: intro-sai 0.8s ease 2.6s forwards;
 }
 
-/* logo em duas camadas empilhadas (mesmo tamanho, alinhadas) */
+/* logo em duas camadas empilhadas (mesmo tamanho, alinhadas).
+   A animação é no conjunto, então as duas partes sobem juntas. */
 .intro-logo {
   position: relative;
   width: 240px;
   aspect-ratio: 800 / 376;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: logo-sobe 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
 }
 
 .intro-logo img {
   position: absolute;
   inset: 0;
   width: 100%;
-  opacity: 0;
 }
 
-.logo-el {
-  animation:el-entra  0.8s ease 1.5s forwards;
-}
-
-.logo-aneis {
-  animation:
-    aneis-entram 0.9s ease 0.2s forwards,
-    aneis-direita 0.9s ease 0.8s both;
-}
-
-
-@keyframes aneis-entram {
-  to   { opacity: 1; transform: none; }
-}
-@keyframes aneis-direita {
-from { transform: translateX(-50px); }
-  to   { transform: none; }
-}
-
-@keyframes el-entra {
-  from { transform: translateX(24px); }
-  to   { opacity: 1; transform: none; }
-}
-@keyframes logo-centraliza {
-  from { transform: translate(-22.25%, -7.45%); }   /* anéis no centro */
-  to   { transform: none; }                          /* logo inteira no centro */
+@keyframes logo-sobe {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* frase opcional embaixo da logo (só se estiver no HTML) */
@@ -66,7 +52,7 @@ from { transform: translateX(-50px); }
   font-size: clamp(20px, 3vw, 32px);
   opacity: 0;
   transform: translateY(10px);
-  animation: intro-entra 0.9s ease 0.8s forwards;
+  animation: intro-entra 0.9s ease 1.2s forwards;
 }
 
 @keyframes intro-entra {

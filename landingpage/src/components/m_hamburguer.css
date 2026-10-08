@@ -1,9 +1,9 @@
 .menu-hamburguer {
-  --cor-fundo: #111111;
-  --cor-texto: #e5e5e5;
+  --cor-fundo: var(--noite);
+  --cor-texto: #e5ecff;
   --cor-destaque: #ffffff;
   --cor-hover: rgba(255, 255, 255, 0.08);
-  --cor-linha: var(--linha, rgba(255, 255, 255, 0.12));
+  --cor-linha: var(--linha, rgba(255, 255, 255, 0.14));
   --largura-painel: min(280px, 80vw);
 
   position: fixed;
@@ -23,7 +23,7 @@
   width: 44px;
   height: 44px;
   padding: 12px;
-  background: rgba(8, 7, 10, 0.78);
+  background: rgba(11, 18, 48, 0.78);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--cor-linha);
@@ -69,6 +69,7 @@
   margin: 0;
   padding: 80px 24px 24px;
   background: var(--cor-fundo);
+  border-left: 1px solid var(--cor-linha);
   transform: translateX(100%);
   visibility: hidden;
   transition: transform 0.3s ease, visibility 0.3s;

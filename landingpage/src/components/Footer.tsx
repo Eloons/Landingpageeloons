@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="contem footer-grade">
         <div className="footer-marca">
-          <img src="/eloo_e_l_branco.png" alt="Logo da ELO" />
+          <img src="/eloons-logo-letras-brancas.png" alt="Logo da ELO" />
           <p className="footer-frase">
             Eficiência, lógica e <span className="destaque">otimização</span> em
             cada entrega.
@@ -34,7 +34,7 @@ export default function Footer() {
         <div>
           <h4>Contato</h4>
           <div className="icons">
-            <a href="#" aria-label="GitHub">
+            <a href="https://github.com/Eloons" aria-label="GitHub">
               <i id="git" className="fa-brands fa-github"></i>
             </a>
             <a href="mailto:eloenterprise.company@gmail.com" aria-label="E-mail">
