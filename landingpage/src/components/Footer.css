@@ -4,7 +4,7 @@
 
 .footer {
   padding: 72px 0 28px;
-  background: #000;
+  background: var(--fundo);
   border-top: 1px solid var(--linha);
 }
 

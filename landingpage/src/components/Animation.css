@@ -12,7 +12,7 @@ body {
   top: 0;
   height: 100vh;
   overflow: hidden;
-  background: black;
+  background: var(--fundo);
 }
 
 .take {
@@ -27,7 +27,7 @@ body {
 .Problema {
   margin: 0;
   font-size: 4rem;
-  color: #ffffff;
+  color: var(--texto);
 }
 
 .lampada-conjunto {
@@ -55,5 +55,5 @@ body {
 }
 
 .take3 {
-  color: white;
+  color: var(--texto);
 }
