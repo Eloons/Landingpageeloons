@@ -16,7 +16,7 @@
 .form-card {
   width: 100%;
   background: #fff;
-  color: var(--preto-mono);
+  color: black;
   border-radius: 14px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -57,7 +57,7 @@
   border: 1px solid #c4cad8;
   border-radius: 8px;
   background: #fff;
-  color: var(--preto-mono);
+  color: black;
   font-size: 14px;
   font-family: inherit;
   outline: none;
