@@ -5,6 +5,7 @@
    VARIÁVEIS E BASE
    ===================================================================== */
 
+<<<<<<< HEAD
 :root {
   /* paleta da marca */
   --eletrico: #1238ff;
@@ -24,7 +25,37 @@
   --linha: rgba(255, 255, 255, 0.14);
   --marca: var(--eletrico);
   --marca-clara: var(--ciano);
+=======
+/* Tema escuro = padrão (vale mesmo antes de o JS rodar) */
+:root,
+[data-time="dark"] {
+  color-scheme: dark;
 
+  --fundo: #08070a;
+  --fundo-2: #100f14;
+  --texto: #f2efe9;
+  --texto-suave: rgba(242, 239, 233, 0.62);
+  --linha: rgba(242, 239, 233, 0.14);
+  --marca: #4444ad;
+  --marca-clara: #8f8fff;
+}
+>>>>>>> 2e56b1b (Acessibilidade)
+
+/* Tema claro: só sobrescreve as cores */
+[data-time="light"] {
+  color-scheme: light;
+
+  --fundo: #f6f4ef;
+  --fundo-2: #ffffff;
+  --texto: #1a1820;
+  --texto-suave: rgba(26, 24, 32, 0.66);
+  --linha: rgba(26, 24, 32, 0.16);
+  --marca: #4444ad;
+  --marca-clara: #4444ad;
+}
+
+/* Variáveis que não mudam entre os temas */
+:root {
   --serif: 'Lora', Georgia, 'Times New Roman', serif;
   --sans: 'Sora', system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -41,9 +72,7 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--fundo);
   font-family: var(--sans);
-  color: var(--texto);
 }
 
 body {
@@ -54,6 +83,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -98,9 +128,8 @@ a {
   padding: 0 var(--margem);
 }
 
-
 /* =====================================================================
-   4. COMPONENTES
+   COMPONENTES
    ===================================================================== */
 
 /* espaçamento e linha de separação entre as seções */
@@ -179,7 +208,6 @@ a {
   border-color: var(--texto);
 }
 
-
 /* ---------- responsivo (global) ---------- */
 @media (max-width: 1024px) {
   #wwa,
@@ -194,8 +222,11 @@ a {
 }
 
 @media (max-width: 900px) {
+<<<<<<< HEAD
   /* navbar ficou mais alta: mais espaço pros links âncora */
 
+=======
+>>>>>>> 2e56b1b (Acessibilidade)
   #wwa,
   .services,
   .projetos,

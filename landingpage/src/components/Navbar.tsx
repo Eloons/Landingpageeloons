@@ -1,17 +1,21 @@
 import "./Navbar.css";
+import Botao from "./Acessibilidade";
 
 const links = [
   { href: "#wwa", label: "Sobre" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#Projetos", label: "Projetos" },
+  { href: "#projetos", label: "Projetos" },
   { href: "#processo", label: "Processo" },
   { href: "#stack", label: "Stack" },
+<<<<<<< HEAD
   { href: "#contato", label: "Contato" },
+=======
+>>>>>>> 2e56b1b (Acessibilidade)
 ];
 
 export default function Navbar() {
   return (
-    <section className="navbar" id="home">
+    <nav className="navbar" id="home" aria-label="Navegação principal">
       <a href="#home">
         <img src="/eloons-simbolo.png" alt="Logo da ELO" />
       </a>
@@ -22,6 +26,7 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-    </section>
+      <Botao />
+    </nav>
   );
 }
