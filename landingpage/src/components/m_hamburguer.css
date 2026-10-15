@@ -1,9 +1,9 @@
 .menu-hamburguer {
-  --cor-fundo: var(--noite);
-  --cor-texto: #e5ecff;
-  --cor-destaque: #ffffff;
-  --cor-hover: rgba(255, 255, 255, 0.08);
-  --cor-linha: var(--linha, rgba(255, 255, 255, 0.14));
+  --cor-fundo: var(--fundo);
+  --cor-texto: var(--texto);
+  --cor-destaque: var(--texto);
+  --cor-hover: color-mix(in srgb, var(--texto) 8%, transparent);
+  --cor-linha: var(--linha);
   --largura-painel: min(280px, 80vw);
 
   position: fixed;
@@ -23,7 +23,7 @@
   width: 44px;
   height: 44px;
   padding: 12px;
-  background: rgba(11, 18, 48, 0.78);
+  background: rgba(0, 0, 0, 0.78);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--cor-linha);
@@ -32,7 +32,7 @@
 }
 
 .botao-hamburguer:focus-visible {
-  outline: 2px solid var(--cor-destaque);
+  outline: 2px solid var(--marca-clara);
   outline-offset: 2px;
 }
 
@@ -94,6 +94,7 @@
   display: block;
   padding: 12px 14px;
   color: var(--cor-texto);
+  font-family: var(--sans);
   font-size: 1.05rem;
   text-decoration: none;
   border-radius: 8px;

@@ -1,5 +1,7 @@
 import "./m_hamburguer.css"
 import { useState } from "react"
+import Botao from "./Acessibilidade"
+
 
 export default function Menuhambuguer() {
     const [aberto, setAberto] = useState(false)
@@ -32,6 +34,7 @@ export default function Menuhambuguer() {
                 <li><a href="#stack" onClick={fechar}>Stack</a></li>
                 <li><a href="#contato" onClick={fechar}>Contato</a></li>
             </ul>
+            <Botao />
         </menu>
     </div>
   )

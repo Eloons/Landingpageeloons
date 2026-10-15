@@ -4,7 +4,7 @@ import Botao from "./Acessibilidade";
 const links = [
   { href: "#wwa", label: "Sobre" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#projetos", label: "Projetos" },
+  { href: "#Projetos", label: "Projetos" },
   { href: "#processo", label: "Processo" },
   { href: "#stack", label: "Stack" },
   { href: "#contato", label: "Contato" },
