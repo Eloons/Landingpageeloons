@@ -3,7 +3,6 @@ import "./Footer.css";
 const navegar = [
   { href: "#wwa",      label: "Sobre" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#Projetos", label: "Trabalho" },
   { href: "#processo", label: "Processo" },
   { href: "#stack"   , label: "Stack" },
   {href:  "#Projetos", label:" Projetos"},

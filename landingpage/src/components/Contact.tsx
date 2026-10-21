@@ -48,8 +48,8 @@ export default function Contact() {
       <div className="contem contato-grade">
         <div className="contato-texto">
           <h2 className="sobre-titulo">
-            Nos fale o problema, que nós{" "}
-            <span className="destaque">resolvemos.</span>
+            Nos conte oque {" "}
+            <span className="destaque">precisa,</span> estamos aqui para resolver
           </h2>
           <p className="sub">
             Fale direto com quem desenvolve, pelo WhatsApp ou pelo formulário.

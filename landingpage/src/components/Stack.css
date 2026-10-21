@@ -3,28 +3,75 @@
    ===================================================================== */
 
 .stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  overflow: hidden;
   margin-top: 56px;
+  width: 100%;
+}
+
+.stack-track {
+  display: flex;
+  width: max-content;
+  animation: stack-carousel 42s linear infinite;
+}
+
+.stack-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  padding-right: 12px;
+}
+
+.stack:hover .stack-track,
+.stack:focus-within .stack-track {
+  animation-play-state: paused;
+}
+
+.stack:focus-visible {
+  outline: 2px solid var(--marca);
+  outline-offset: 4px;
+}
+
+@keyframes stack-carousel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 22px;
-  font-size: 15px;
+  gap: 14px;
+  padding: 18px 26px;
+  font-size: 17px;
   color: var(--texto);
   background: var(--fundo-2);
   border: 1px solid var(--linha);
-  border-radius: 999px;
+  border-radius: 8px;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .chip svg {
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
+}
+
+.chip img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.chip .express-icon {
+  filter: invert(1);
+}
+
+body[data-time="light"] .chip .express-icon {
+  filter: none;
 }
 
 .chip:hover {
@@ -35,5 +82,19 @@
 @media (max-width: 900px) {
   .stack {
     margin-top: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack {
+    overflow-x: auto;
+  }
+
+  .stack-track {
+    animation: none;
+  }
+
+  .stack-group[aria-hidden="true"] {
+    display: none;
   }
 }

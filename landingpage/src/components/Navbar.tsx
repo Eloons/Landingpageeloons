@@ -12,7 +12,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className="navbar" id="home" aria-label="Navegação principal">
+    <nav className="navbar" aria-label="Navegação principal">
       <a href="#home">
         <img src="/eloons-simbolo.png" alt="Logo da ELO" />
       </a>

@@ -7,7 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 // Quando os projetos reais existirem, é só trocar estes itens (imagem, título, legenda).
 const projetos = [1, 2, 3].map((n) => ({
   id: n,
-  imagem: "/image.png",
+  imagem:
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmR8schoxDgEJpxSB8iQL9lDbGfahHiLURyZoCmJopTAjbhTgVrAoRmds&s=10",
   titulo: "Em breve",
   legenda: "Projetos futuro",
   alt: `Projeto futuro ${n}`,
@@ -46,7 +47,7 @@ export default function Projetos() {
     <section className="projetos" id="Projetos">
       <div className="contem">
         <h2 className="Titulo">
-          Projetos que <span className="destaque">fazem</span>
+          Projetos que <span className="destaque">desenvolvemos.</span>
         </h2>
         <p className="sub">Os primeiros projetos estarão aqui em breve.</p>
 

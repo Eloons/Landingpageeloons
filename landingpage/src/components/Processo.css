@@ -2,64 +2,282 @@
    8. PROCESSO
    ===================================================================== */
 
-.etapas {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 64px 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--linha);
-  border-left: 1px solid var(--linha);
-}
-
-.processo{
+.processo {
+  position: relative;
+  display: block;
+  min-height: 0;
+  padding: 76px 0;
+  overflow: hidden;
+  isolation: isolate;
   scroll-margin-top: 10px;
+  background:
+    radial-gradient(
+      ellipse at 50% 55%,
+      color-mix(in srgb, var(--marca) 10%, transparent),
+      transparent 58%
+    ),
+    var(--fundo);
 }
 
-
-.etapas li {
-  padding: 32px 28px 40px;
-  border-right: 1px solid var(--linha);
-  border-bottom: 1px solid var(--linha);
+.processo-ambiente,
+.processo-grade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
-.etapas .num {
-  padding-top: 0;
+.processo-ambiente {
+  z-index: -1;
+  overflow: hidden;
 }
 
-.etapas h3 {
-  margin: 18px 0 10px;
+.processo-grade {
+  opacity: 0.2;
+  background-image:
+    linear-gradient(rgba(143, 143, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 143, 255, 0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 5%, transparent 75%);
+}
+
+.processo-orbe {
+  position: absolute;
+  width: min(56vw, 620px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.17;
+  background: var(--marca);
+}
+
+.processo-orbe-a {
+  top: -38%;
+  left: -20%;
+}
+
+.processo-orbe-b {
+  right: -22%;
+  bottom: -42%;
+  opacity: 0.12;
+}
+
+.processo-anel {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  width: min(70vw, 760px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(143, 143, 255, 0.12);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(62deg);
+  box-shadow:
+    0 0 80px rgba(143, 143, 255, 0.08),
+    inset 0 0 80px rgba(143, 143, 255, 0.06);
+}
+
+.processo-conteudo {
+  position: relative;
+  z-index: 1;
+}
+
+.processo-cabecalho {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.processo-selo,
+.processo-card-selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--marca-clara);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.processo-selo {
+  padding: 10px 16px;
+  border: 1px solid rgba(143, 143, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(143, 143, 255, 0.07);
+}
+
+.processo-ponto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--marca-clara);
+  box-shadow: 0 0 14px var(--marca-clara);
+}
+
+.processo-cabecalho h2 {
+  margin: 22px 0 12px;
   font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
   font-weight: 400;
-  font-size: 26px;
-  letter-spacing: -0.01em;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
 }
 
-.etapas p {
+.processo-cabecalho > p {
   margin: 0;
-  font-size: 15px;
   color: var(--texto-suave);
+  font-size: clamp(15px, 1.5vw, 18px);
 }
 
-@media (max-width: 1024px) {
-  .etapas li {
-    padding: 28px 22px 34px;
+.processo-palco {
+  position: relative;
+  display: grid;
+  min-height: 300px;
+  perspective: 1200px;
+}
+
+.processo-palco:focus-visible {
+  outline: 2px solid var(--marca-clara);
+  outline-offset: 8px;
+}
+
+.processo-card {
+  position: absolute;
+  inset: 0;
+  width: min(100%, 900px);
+  min-height: 280px;
+  margin: auto;
+  padding: clamp(24px, 4vw, 44px);
+  overflow: hidden;
+  border: 1px solid rgba(143, 143, 255, 0.28);
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--fundo-2) 88%, var(--marca)),
+      var(--fundo-2)
+    ),
+    var(--fundo-2);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 48px rgba(143, 143, 255, 0.1);
+  backface-visibility: hidden;
+  visibility: hidden;
+}
+
+.processo-card::after {
+  position: absolute;
+  right: -100px;
+  bottom: -150px;
+  width: 360px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(143, 143, 255, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 32px rgba(143, 143, 255, 0.025),
+    0 0 0 64px rgba(143, 143, 255, 0.02);
+  content: "";
+  pointer-events: none;
+}
+
+.processo-card-indice {
+  position: absolute;
+  right: 20px;
+  bottom: -44px;
+  color: color-mix(in srgb, var(--texto) 4%, transparent);
+  font-family: var(--mono);
+  font-size: clamp(180px, 25vw, 270px);
+  font-weight: 900;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.processo-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 0 16px;
+  font-family: var(--sans);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+  text-shadow: 0 0 24px rgba(143, 143, 255, 0.35);
+}
+
+.processo-card > p {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0;
+  color: var(--texto);
+  font-size: clamp(16px, 1.7vw, 21px);
+  font-weight: 600;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.processo-card > p strong {
+  color: var(--marca-clara);
+  text-shadow: 0 0 20px rgba(143, 143, 255, 0.45);
+}
+
+@media (max-width: 700px) {
+  .processo {
+    min-height: 0;
+    padding: 64px 0;
   }
 
-  .etapas h3 {
-    font-size: 23px;
+  .processo-cabecalho {
+    margin-bottom: 24px;
+  }
+
+  .processo-palco {
+    min-height: 330px;
+  }
+
+  .processo-card {
+    min-height: 310px;
+    border-radius: 18px;
+  }
+
+  .processo-card h3 {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+
+  .processo-card > p {
+    font-size: clamp(15px, 3.8vw, 18px);
   }
 }
 
-@media (max-width: 900px) {
-  .etapas {
-    margin-top: 48px;
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 420px) {
+  .processo-palco {
+    min-height: 360px;
   }
+
+  .processo-card {
+    min-height: 340px;
+    padding: 22px 18px;
+  }
+
 }
 
-@media (max-width: 600px) {
-  .etapas {
-    grid-template-columns: 1fr;
+@media (prefers-reduced-motion: reduce) {
+  .processo-palco {
+    display: grid;
+    gap: 18px;
+    min-height: 0;
+  }
+
+  .processo-card {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    min-height: 0;
+    visibility: visible;
   }
 }

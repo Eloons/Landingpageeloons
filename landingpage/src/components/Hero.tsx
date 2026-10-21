@@ -8,7 +8,7 @@ export default function Hero() {
   useBolinhas(canvasRef);
 
   return (
-    <section className="wwa hero">
+    <section className="wwa_hero" id="home">
       <div className="hero-conteudo">
         <h1 className="signi" id="signi">
           Efficiency,
