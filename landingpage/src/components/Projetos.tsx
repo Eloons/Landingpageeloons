@@ -4,15 +4,24 @@ import { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-// Quando os projetos reais existirem, é só trocar estes itens (imagem, título, legenda).
-const projetos = [1, 2, 3].map((n) => ({
-  id: n,
-  imagem:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmR8schoxDgEJpxSB8iQL9lDbGfahHiLURyZoCmJopTAjbhTgVrAoRmds&s=10",
-  titulo: "Em breve",
-  legenda: "Projetos futuro",
-  alt: `Projeto futuro ${n}`,
-}));
+const projetos = [
+  {
+    id: 1,
+    imagem: "/pizzaria-totem.png",
+    repositorio: "https://github.com/Elo-Eprise/totem",
+    titulo: "Pizzaria & Burger Express",
+    legenda: "Sistema de pedidos • Totem 01",
+    alt: "Terminal do sistema de pedidos da Pizzaria & Burger Express",
+  },
+  {
+    id: 2,
+    imagem: "/csirt-senai.png",
+    repositorio: "https://github.com/Elo-Eprise/apicomprometida",
+    titulo: "CSIRT SENAI",
+    legenda: "Laboratório de resposta a incidentes",
+    alt: "Terminal com testes de requisições do laboratório CSIRT SENAI",
+  },
+];
 
 export default function Projetos() {
   const  listaRef = useRef<HTMLDivElement>(null);
@@ -49,18 +58,24 @@ export default function Projetos() {
         <h2 className="Titulo">
           Projetos que <span className="destaque">desenvolvemos.</span>
         </h2>
-        <p className="sub">Os primeiros projetos estarão aqui em breve.</p>
+        <p className="sub">Confira alguns dos projetos desenvolvidos.</p>
 
         <div className="portifolio" ref={listaRef}>
           {projetos.map((p) => (
-            <div className="card" key={p.id}>
+            <a
+              className="card"
+              href={p.repositorio}
+              key={p.id}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img src={p.imagem} alt={p.alt} />
               <div className="overlay"></div>
               <div className="info">
                 <h3>{p.titulo}</h3>
                 <span>{p.legenda}</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
