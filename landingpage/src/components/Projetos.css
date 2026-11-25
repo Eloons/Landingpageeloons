@@ -81,11 +81,12 @@
   font-family: var(--serif);
   font-weight: 400;
   font-size: 1.6rem;
+  color: #fff;
 }
 
 .card .info span {
   font-size: 0.9rem;
-  color: var(--texto-suave);
+  color: #fff;
 }
 
 /* celular não tem hover: texto sempre visível */
